@@ -8,7 +8,7 @@
   --color-secondary: #5b21b6;       /* Galaxy Purple */
   --color-accent: #f59e0b;          /* Star Gold */
 
-  --color-main-gradient: 'linear-gradient(54deg,#5cd6b3 3.08%,#04b8c4 3.09%,#4bfa8a 98.66%)';
+  --color-main-gradient: linear-gradient(54deg,#5cd6b3 3.08%,#04b8c4 3.09%,#4bfa8a 98.66%);
 
   /* ✅ State Colors */
   --color-success: #10b981;         /* Emerald Green */

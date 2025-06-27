@@ -1,28 +1,29 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { LogoIcon } from "@/_components/atoms/svgIcons/SvgIcons";
+import { LogoSection } from "@/_components/atoms/logo/LogoSection";
 import { Navbar } from "@/_components/atoms/navbar/Navbar";
 import { PrimaryButton } from "@/_components/atoms/buttons/Buttons";
 
 export const MainHeader = () => {
   const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    let ticking = false;
 
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setScrolled(window.scrollY > 50);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
+  // useEffect(() => {
+  //   let ticking = false;
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   const handleScroll = () => {
+  //     if (!ticking) {
+  //       window.requestAnimationFrame(() => {
+  //         setScrolled(window.scrollY > 50);
+  //         ticking = false;
+  //       });
+  //       ticking = true;
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   const baseClass = "fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 flex justify-between gap-4 items-center py-2 will-change-transform";
   const widthClass = scrolled ? "w-[50%]" : "w-[90%]";
@@ -32,9 +33,8 @@ export const MainHeader = () => {
 
   return (
     <header className={`${baseClass} ${widthClass} ${effectClass}`}>
-      <div className="logosec"><LogoIcon /></div>
-      <div className="menusec"><Navbar />
-        </div>
+      <LogoSection />
+      <div className="menusec"><Navbar /></div>
       <div className="ctasec"><PrimaryButton btnType="button">Contact Us</PrimaryButton></div>
     </header>
   );
